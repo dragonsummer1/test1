@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>以及正则表达式</title>
+    <!-- /pattern/modifiers;
+     patten是模式在搜索中使用
+     i是修饰符（把搜索改为大小写）
+     字符串可以search（搜索匹配返回位置）和replace（返回替换后的字符串）方法 -->
+
+</head>
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"> </p>
+    <p id="p01">the best things in life are free!</p>
+    <button onclick="mysim()">搜索</button>
+    <script>
+        var str="visit w3school!";
+        var n=str.search("w3school");
+        document.getElementById("demo1").innerHTML=n;
+        // 全局搜索
+        function mysim(){
+            var str ="Is this all there is?";
+            var patt1=/is/g;
+            var result=str.match(patt1);
+            document.getElementById("demo2").innerHTML=result;
+            //test的用法()检索括号内的内容如果成功则返回true
+text=document.getElementById("p01").innerHTML;
+document.getElementById("demo3").innerHTML=/e/.test(text);
+
+
+
+
+
+
+        }
+
+
+
+    </script>
+</body>
+</html>
