@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 用 const 声明的数组不能重新赋值： -->
+</head>
+<body>
+    <p id="demo3"></p>
+    <!-- 用 const 声明的数组具有块作用域。
+
+在块中声明的数组与在块外声明的数组不同： -->
+<script>
+    const cars=["tim","gad","ted"];
+    {
+        const cars=["violin","cake","lake"];
+        // 快内声明对外侧没有影响
+        // 反之var在这里输入时则会改变外侧数组
+        // var允许重新声明数组
+//         var cars = ["Volvo", "BMW"];         // 允许
+// const cars = ["Volvo", "BMW"];       // 不允许
+// {
+//   var cars = ["Volvo", "BMW"];         // 允许
+//   const cars = ["Volvo", "BMW"];       // 不允许
+// }
+    }
+document.getElementById("demo3").innerHTML=cars[0];
+</script>
+
+</body>
+</html>

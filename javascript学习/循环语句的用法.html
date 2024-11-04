@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+     #demo1{
+            background-color: aqua;
+            font-family: KaiTi;
+            font-size: 80px;
+
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>测试一下字体</p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <script>
+        var text;
+        switch(new Date().getDate){
+            case 6:
+                text="今天是星期六";
+                break;
+                case 0:
+                    text="今天是周日";
+                    break;
+                    default:text="期待周日";
+                    // deault为默认值都不满足则会输出这个
+        }
+        document.getElementById("demo1").innerHTML=text;
+        // for循环遍历
+        var txt="";
+        // txt、为空的字符串将遍历出来的值赋值给txt
+        var person ={fname:"bill",iname:"gates",age:62};
+        var x;
+        // for in用来遍历对象
+        for(x in person){
+            txt+=person[x]+"<br>";
+
+        }
+        document.getElementById("demo2").innerHTML=txt;
+        // 3.遍历数组；
+        const numbers=[45,4,9,16,25];
+        let txt1="";
+        for(let x in numbers){
+            // 定义x为该数组中的索引参数
+            // 所以遍历的为索引值
+            txt1+=numbers[x]+"<br>";
+        }
+        document.getElementById("demo3").innerHTML=txt1;
+        // ************************************************
+        // for of语句
+        // JavaScript for of 语句循环遍历可迭代对象的值。
+// 它允许您循环遍历可迭代的数据结构，例如数组、字符串、映射、节点列表等：
+// for of遍历可以直接遍历元素
+let language="java";
+let text3="";
+for(let x of language){
+    text3+=x+"<br>";
+}
+document.getElementById("demo4").innerHTML=text3;
+// ********************
+// while循环.do while循环
+var man="";
+var i=0;
+do{
+    text +="<br>数字是"+i;
+    i++
+    // do里面的是满足while后执行的
+}
+while(i<10);/*while后面是条件*/
+// ***************************************************
+// constructor返回对象的构造函数,typeof返回元素类型
+document.getElementById("demo5").innerHTML = 
+  "john".constructor + "<br>" +
+  (3.14).constructor + "<br>" +
+  false.constructor + "<br>" +
+  [1,2,3,4].constructor + "<br>" +
+  {name:'john', age:34}.constructor + "<br>" +
+  new Date().constructor + "<br>" +
+  function () {}.constructor;
+
+
+
+
+
+    </script>
+</body>
+</html>

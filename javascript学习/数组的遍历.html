@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #demo3 p{
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <p>调用一次函数</p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <!-- 新生成的数组 -->
+    <p id="demo3"></p>
+    <!-- 原来数组demo3 -->
+    <script>
+        var txt="";
+        var numbers=[45,4,9,16,25];
+        // 
+        numbers.forEach(myarry);
+        // 遍历值给函数
+        document.getElementById("demo1").innerHTML=txt;
+        function myarry(value,index,arry){
+            txt=txt+value+"<br>";
+            // 这里foreach会给函传入这三个值但是函数实际上只用了value这个值
+       
+        }
+        // ******************************************************************
+//         map() 方法通过对每个数组元素执行函数来创建新数组。
+
+// map() 方法不会对没有值的数组元素执行函数。
+
+// map() 方法不会更改原始数组。
+var numbers1=[45,4,9,16,25];
+var numbers2=numbers1.map(mychange);
+document.getElementById("demo2").innerHTML=numbers2;
+document.getElementById("demo3").innerHTML=numbers1;
+function mychange(value){
+    return value*2;
+    // 会让数组输出变为而被但是不会改变原来的数组
+}
+    </script>
+    
+</body>
+</html>
