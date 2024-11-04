@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>索引</title>
+</head>
+<body>
+    <p>slice用于提取某个部分然后返回被提取部分
+    </p>
+    <p id="demo"></p>
+    <p id="demo2">请访问microsoft</p>
+    <button onclick="myfunction()">试一试</button>
+    <p id="class"></p>
+    <p id="pu"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <button id="zhao" onclick="myclass()">电击我看看</button>
+    
+    <script>
+        var str="apple, banana, mango";
+        var day=str.slice(7,13);
+        document.getElementById("demo").innerHTML=day;
+        // 2.substring方法跟slice差不多但是不接受负值索引1
+        // 3.字符串的替换用关键字replace()
+    function myfunction(){
+        var str=document.getElementById("demo2").innerHTML;
+        var txt=str.replace(/MICROSOFT/i,"w3cschool");
+        document.getElementById("demo2").innerHTML=txt;
+        // replace对大小写很敏感大小写不敏感需要加/i/
+    }
+    // 转换大小写关键字touppercase()大写，小写用tolowercase()
+    var test1="hello world";
+    var test2=test1.toLocaleUpperCase();
+    document.getElementById("class").innerHTML=test1;
+    document.getElementById("pu").innerHTML=test2;
+    // concaT()连接两个或者多个字符串
+    var t1="the";
+    var t2="money";
+    t3=t1.concat("",t2)
+    document.getElementById("demo3").innerHTML=t3;
+    // 字符串删掉两端空白符号
+    function myclass(){
+    var t5="    hello      world";
+    alert(t5.trim());}
+    // 对话框警告
+    // 提取字符串中指定的字符chatat()
+    var th1="hello sdcnjsdncjd";
+    document.getElementById("demo4").innerHTML=th1.charAt(4);
+
+
+
+
+
+
+    </script>
+</body>
+</html>

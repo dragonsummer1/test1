@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<p id="xsa"></p>
+<body>
+    <script>
+        document.getElementById("xsa").innerHTML=
+        typeof undefined+"<br>"+typeof null+"<br> <br>"+
+        (null===undefined)+"<br>"+
+        // null与un自然严格相等
+        (null==undefined);
+        // null类型输出为object表示类型不确定不会把函数返回。
+        // 而null跟un也不相等
+    </script>
+</body>
+</html>

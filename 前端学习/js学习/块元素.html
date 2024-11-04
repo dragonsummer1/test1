@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        var x=10;
+        // 使用var声明x=10；
+        {
+            // var x=2;
+            //x=2
+            let x=2;
+            // 而let关键字会让块级元素不会进行改变外面的元素的值
+        }
+        // x=2
+        //块元素直接声明var会导致的效果
+        const car=10;
+        // const关键字必须需要声明后赋值；
+        document.getElementById("demo").innerHTML=x;
+    </script>
+    
+</body>
+</html> 
