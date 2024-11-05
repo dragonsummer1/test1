@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>严格模式</title>
+</head>
+<body>
+    <script>
+        // "use strict";
+        // 使用严格模式
+        // var arguments=3.14;
+        // js严格模式不允许使用arguments；arguments 是一个对应于传递给函数的参数的类数组对象
+        function func1(a, b, c) {
+  console.log(arguments[0]);
+  // Expected output: 1
+
+  console.log(arguments[1]);
+  // Expected output: 2
+
+  console.log(arguments[2]);
+  // Expected output: 3
+}
+
+func1(1, 2, 3);
+    </script>
+</body>
+</html>
