@@ -7,6 +7,10 @@
 </head>
 <body>
     <p id="demo1"></p>
+    <input id="demo2" type="text">
+    <!-- text创建一行空的表 -->
+    <button type="button" onclick="myclass()">检测输入</button>
+    <p id="p01"></p>
     <script>
     var num=1;
     try{
@@ -16,6 +20,30 @@
 
     }catch(err){
         document.getElementById("demo1").innerHTML=err.name;
+    }
+    function myclass(){
+        var message,x;
+        message=document.getElementById("p01");
+        message.innerHTML="";
+        // 输出"""
+        x=document.getElementById("demo2").value;
+        // 从demo2中获取value
+        try{
+            if(x=="") throw "是空的";
+            if(isNaN(x)) throw "不是数字";
+            // isnan判断这个是否位数
+            X=Number(x);
+            // 强制转换为数字如果不是数字就会输出nan
+            if(x<5) throw "太小";
+            if(x>10) throw "太大";
+            // 进行代码尝试的判断
+        }
+
+catch(err){
+    message.innerHTML="输入:"+err;
+    //输出在p01
+}
+
     }
     </script>
 </body>
