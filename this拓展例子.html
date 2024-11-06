@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="demo3">惦记我</button>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        var hello;
+        hello=()=>{
+
+            document.getElementById("demo").innerHTML+=this;
+            
+        }
+        window.addEventListener("load",hello);
+        // 整个界面都加载完毕的时候在进行该程序然后会输出this因为没有所以的话就会输出object window
+        document.getElementById("demo3").addEventListener("click",hello);
+        // 将点击动作同时函数执行
+        // *******************
+        var person={
+            firstname:"bill",
+            lastname: "grate",
+            id:678,
+            myfunction:function(){
+                return this;
+                // 函数另一种定义的方法
+            }
+        };
+        document.getElementById("demo1").innerHTML=person.myfunction();
+        // 调用函数进行上面内容输出 object object 就是上面的所有person里的对象但是显示不出来
+        document.getElementById("demo1").innerHTML= JSON.stringify(person);
+        // 将对象里的内容以字符串的形式输出出来转换为jison字符串
+
+    </script>
+</body>
+</html>
