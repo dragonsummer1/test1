@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./js外侧文件/文件.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js
+    的模块
+    </title>
+</head>
+<body>
+    <P id="demo"></P>
+    <script type="module">
+    <!-- type module后就可以引用模块 -->
+    //  import message from "导入的模块";
+    //   引用模块 import
+    // 模块的导出将代码存储在外侧文件中见外侧文件中的导出
+    // 接下来使用
+import {name,age}from "./message.js";
+// 导入包里面的name 和age
+let text="my name is"+name+"i am"+age+"";
+document.getElementById("demo").innerHTML=text;
+// 仅支持https协议
+
+
+
+
+</script>
+</body>
+</html>
