@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <P id="demo"></P>
+<script>
+class car{
+    constructor(name,year){
+        // 是一种构造方法
+        this.name=name;
+        this.year=year;
+    }
+    age(){
+        // 类方法
+        let date=new Date();
+        // 声明date函数
+        return date.getFullYear()-this.year;
+        // getFullYear获取今年
+    }
+}
+
+const mycar=new car("ford",2014);
+// 声明函数
+document.getElementById("demo").innerHTML="my car is"+mycar.age()+"years old";
+// 方法函数调用也用.
+// 调用函数并赋值
+// 3..类方法是在方法中的一种函数语法是名字加（）
+
+
+</script>
+</body>
+</html>
