@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript <b>this</b> 关键词</h1>
+
+<p>在本例中，<strong>this</strong> 引用 person2，即使它是 person1 的方法：</p>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<script>
+var person1 = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+    // js的一种写法可以将函数写在变量里面
+  }
+}
+var person2 = {
+  firstName:"Bill",
+  lastName: "Gates",
+}
+var x = person1.fullName.call(person2); 
+document.getElementById("demo").innerHTML = x; 
+// 箭头函数
+let classfunction=(a,b)=>a*b;
+// 让函数的写法变得更加简单
+document.getElementById("demo2").innerHTML=classfunction(4,5);
+
+</script>
+<!-- this
+ 可以调用函数体里面的数据到另一个函数当中 -->
+
+</body>
+</html>
