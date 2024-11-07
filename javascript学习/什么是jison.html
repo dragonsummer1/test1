@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+    <!-- 语法规则：数据是名称/值对
+数据由逗号分隔
+花括号保存对象
+方括号保存数组 -->
+
+</head>
+<body>
+    <p id="demo1"></p>
+    <!-- 对象的创建例如 "firstName":"Bill" 区别：javascript的名称不要双引号-->
+     <!-- JSon转化为jscrpt -->
+      <script>
+        var text = '{"employees":[' +
+'{"firstName":"Bill","lastName":"Gates" },' +
+'{"firstName":"Steve","lastName":"Jobs" },' +
+'{"firstName":"Elon","lastName":"Musk" }]}';
+obj=JSON.parse(text);
+// 将test转化为java
+document.getElementById("demo1").innerHTML=obj.employees[1].firstName+"<br>"
++obj.employees[1].lastName;
+// 输出数组中的第二个数br为换行语句
+
+      </script>
+</body>
+</html>
