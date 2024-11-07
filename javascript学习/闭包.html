@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+    <p id="demo1"></p>
+    <!-- 实现对变量的储存作用确保不会被释放掉函数嵌套函数然后内函数的变量用到外函数的变量 -->
+     <script>
+        function myclass(){
+            let a=10;
+            return function(){
+                a++;
+                // document.getElementById("demo1").innerHTML
+                console.log(a);
+            }
+            // 闭包形成通过赋值形成闭包,通过一个变量来接收值
+       let c=myclass();
+       
+
+        }
+     </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        class car{
+            constructor(brand){
+                this.carname=brand;
+                // 一键返回到桌面的按键windows+d                              
+            }
+            present(){
+                return "我是"+this.carname;
+            }
+        }
+        class model extends car{
+            // 函数的继承
+            constructor(brand,mod){
+                super(brand);
+                // 继承父类变量用super
+                this.model=mod;
+            }
+            show(){
+                return this.present()+"可能是这样吧"+this.model;
+            }
+        }
+        let mycar=new model("ford","mustang");
+        document.getElementById("demo").innerHTML=mycar.show();
+    </script>
+</body>
+</html>
