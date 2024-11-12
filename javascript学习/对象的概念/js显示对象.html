@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <script>
+      var person={  name:"bill",
+        age:19,
+        city:"seable"
+    };
+        // document.getElementById("demo").innerHTML=person;
+        // 直接输出对象显示为object
+        // 另一种方法是循环遍历输出
+        // let txt="";
+        // for( let x in person){
+        //     txt+=person[x]+"";
+        // };
+        // document.getElementById("demo1").innerHTML=txt;
+        // 2.使用object。values-----将对象转换为数组
+        // let myarry=Object.values(person);
+        // document.getElementById("dmeo3").innerHTML=myarry;
+        // 数组不能直接输出所以不会显示
+        // 3.转化为字符串
+        // 也可以将数组转化为字符串
+        document.getElementById("demo4").innerHTML=JSON.stringify(person);
+        
+
+
+
+
+    </script>
+</body>
+</html>

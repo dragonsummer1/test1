@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function Person(firstName,lastName,age,eyeColor) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+  this.eyeColor = eyeColor;
+//   对象构造器
+  this.changeName = function (name) {
+    this.lastName = name;
+  }
+}
+// 创建对象
+var myfriend=new Person("bill","lock","62","green");
+// 修改姓氏
+myfriend.changeName("jobs");
+document.getElementById("demo").innerHTML="my friend  is last name "+myfriend.lastName;
+    </script>
+</body>
+</html>

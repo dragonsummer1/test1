@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+        // 构造器函数
+        function person(first,last,age,eye){
+            this.firstname=first;
+            this.lastname=last;
+            this.age=age;
+          this.eye=eye;
+       
+            
+        }
+        // 对象构造器
+        var myfriend=new person("bill","grate",62,"blue");
+        // 蓝图
+        document.getElementById("demo").innerHTML="my friend is"+myfriend.age+".";
+// 添加方法前提是,向声明的对象添加方法
+// 添加一个叫name的函数
+myfriend.name=function(){
+    return this.firstname+""+this.lastname;
+}
+//   // 所以填的是myfriend而不是其他的
+document.getElementById("demo1").innerHTML=myfriend.name();
+// 不能将新的属性添加到构造函数
+// 例如person.natonal="english"
+// 我们会发现
+    </script>
+</body>
+</html>

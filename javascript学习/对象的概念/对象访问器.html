@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get和set</title>
+</head>
+<body>
+    <p>get和set</p>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="dem2"></p>
+<script>
+    var person={
+        firstName: "Bill",
+  lastName : "Gates",
+  language : "en",
+//   //   当然也可以用存储值的方式
+// fullName : function() {
+//     return this.firstName + " " + this.lastName;
+//   }
+
+  get lang(){
+    // 获取属性
+    return this.language;
+  }
+
+// get用来获取属性值language
+    };
+    document.getElementById("demo").innerHTML=person.lang;
+    // document.getElementById("demo2").innerHTML=person.fullname();
+    // set()设置属性值
+    var paper={
+        firstName:"zhao",
+        lastName:"system",
+        cctv:"kongge",
+        set zhao(value){
+            this.cctv=value;
+        }
+    };
+    // 使用set设置属性
+    paper.zhao="wukong";
+    document.getElementById("demo1").innerHTML=paper.cctv;
+
+
+
+
+</script>
+</body>
+</html>
