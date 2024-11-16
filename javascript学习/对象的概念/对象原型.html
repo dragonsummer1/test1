@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <!-- prototype允许为对象构造器添加新属性,当然也允许对象构造器添加新方法 -->
+     <script>
+        function  person(first,last,age,eye){
+            this.name=first;
+            this.lastname=last;
+            this.age=age;
+            this.eyecolor=eye;
+        }
+        person.prototype.nationnal="china";
+        // 用这个后可以润许在对象里面添加
+        var myfriend=new person("bill","grate",62,"blue");
+        document.getElementById("demo").innerHTML="the national of "+myfriend.nationnal;
+        // 调用新加入的内容
+
+     </script>
+
+</body>
+</html>
