@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f1(){
+            var num=6;
+            // function f2(){
+            //     var num2=7;
+
+            // }
+            // console.log(num+num2);
+            // 这么写掉用不了函数里面的值所以会导致报错
+            function f2(){
+                var num2=10;
+                return num2;
+            }
+            console.log(num+f2());
+        }
+        f1();
+// argument的用法
+function foo(){
+    console.log(arguments[0]);
+    console.log(arguments[1]);
+}
+foo(2,3);
+// 打印2,3
+// 不用指明参数名字直接就可以赋值进行访问
+//还可以用来检测函数参数个数
+function add(){
+    var sum=0;
+    for(var i=0;i<arguments.length;i++){
+        sum+=arguments[i];
+    }
+    return sum ;
+}
+add();
+add(1);
+add(1,2,3,43,5,4,5,6,7);
+// 遍历求和
+    </script>
+</body>
+</html>

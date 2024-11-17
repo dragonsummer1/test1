@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function用法</title>
+</head>
+<body>
+    <script>
+        // var function_name=new Function(arg1,arg2,arg3,function_body);
+        // 注意：每个参数都是字符串，body为函数体要执行的代码
+        var add=new Function("a","b","console.log(a+b);");
+        add(2,5);
+        //打印7
+        // 函数也可以被变量所接收
+        var doadd=add;
+        // 另一种写法
+        function addF(foo,b,c){
+            foo(b,c);
+        }
+addF(add,2,5);
+// 方法valueof()和tostring() 方法都会返回函数源代码
+var sex=new Function("a","b","c","console.log(a+b+c);");
+sex.valueOf();
+sex.toString();
+
+    </script>
+</body>
+</html>

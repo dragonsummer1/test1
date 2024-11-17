@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Map 对象</h1>
+<p>由数组创建 Map：</p>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+// 创建 Map
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+// 获得apple的值输出500
+document.getElementById("demo").innerHTML = fruits.get("apples");
+// 返回apples有没有键值有的话返回true
+document.getElementById("demo1").innerHTML=fruits.has("apples");
+
+
+
+</script>
+
+</body>
+</html>

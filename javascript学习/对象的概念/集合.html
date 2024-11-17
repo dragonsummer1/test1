@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <script>
+        const letters =new Set(["a","b","c"]);
+        document.getElementById("demo").innerHTML=letters.size;
+        // 变量赋值
+        const a=new Set();
+        a.add("a");
+        a.add("b");
+        a.add("c");
+document.getElementById("demo1").innerHTML=a.size;
+// 列出所有元素
+let text="";
+letters.forEach(function(value){
+    text+=value+"<br>";
+})
+document.getElementById("demo2").innerHTML=text;
+// 法2
+let b="";
+for(const x of letters.values()){
+    b+=x+"<br>";
+}
+document.getElementById("demo3").innerHTML=b;
+// 迭代器与key返回结果相同
+document.getElementById("demo4").innerHTML=letters.values();
+document.getElementById("demo5").innerHTML=letters instanceof Set;
+// 判断集合
+
+
+    </script>
+</body>
+</html>
