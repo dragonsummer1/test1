@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for(var i=0;i<5;i++){
+        //     setTimeout(function(){
+        //         console.log(i++);
+        //     },4000);
+        // }
+        // console.log(i);
+        // 2.直接输出5后输出1.2.3.4.
+        for(var i=0;i<5;i++){
+            (function(x){
+                setTimeout(function(){
+                    console.log(x++)
+                },4000);
+            })(i);
+        }
+        console.log(i);
+        // 原理：js代码会先执行以下全局后，然后进行内部一步一步
+
+    </script>
+</body>
+</html>

@@ -6,6 +6,7 @@
 
 <p id="demo"></p>
 <p id="demo1"></p>
+<p id="demo2"></p>
 
 <script>
 // 创建 Map
@@ -18,7 +19,12 @@ const fruits = new Map([
 document.getElementById("demo").innerHTML = fruits.get("apples");
 // 返回apples有没有键值有的话返回true
 document.getElementById("demo1").innerHTML=fruits.has("apples");
-
+// map的 key value
+let c="";
+for(const x of fruits.entries()){
+  c += x+"<br>";
+}
+document.getElementById("demo2").innerHTML=c;
 
 
 </script>
