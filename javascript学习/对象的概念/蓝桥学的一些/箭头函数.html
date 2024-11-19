@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- 箭头函数的例子 -->
+    <script>
+        var test1=function(){
+            console.log("1111");
+
+        }
+        var test2=()=>{
+            console.log("2222");
+        }
+        test1();
+        test2();
+        // 1.（）可以省略.仅限于一个形参的时候，对象多的话就必须加括号
+// 2.{}省略，只有一句话或者只有返回值带时候可以省略
+// var test3=(a)=>{
+//     return 100*a;
+// }
+// console.log(test3(10));
+var test3=a=>100*a;
+// 返回100×a
+// 细节3.函数内有对象的时候我们一般用括号
+var test4=()=>({
+    name:"heima"
+})
+console.log(test4());
+    </script>
+</body>
+</html>
