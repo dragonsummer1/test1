@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function curry(fn) {
+  // 获取函数的参数个数
+  const arity = fn.length;
+ 
+  return function curried(...args) {
+    // 如果传入的参数数量大于等于原始函数的参数数量，则调用原始函数
+    if (args.length >= arity) {
+      return fn(...args);
+    } else {
+      // 否则，返回一个新的函数，继续接受剩余的参数
+      return function (...nextArgs) {
+        return curried(...args, ...nextArgs);
+      }
+    }
+  };
+}
+    </script>
+</body>
+</html>

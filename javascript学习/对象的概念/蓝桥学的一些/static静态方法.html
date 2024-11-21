@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        class car{
+            constructor(name){
+                this.name=name;
+            }
+            static hello(x){
+                return "hello";
+            }
+        }
+        let mycar=new car("ford");
+        // static只能对象调用
+        document.getElementById("demo1").innerHTML=car.hello("");
+        // document.getElementById("demo").innerHTML=mycar.hello()
+        // 静态在对象上掉用不了
+        // document.getElementById("demo").innerHTML=car.hello(mycar);
+    </script>
+</body>
+</html>

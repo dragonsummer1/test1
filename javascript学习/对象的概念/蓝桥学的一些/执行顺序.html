@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript 函数序列</h2>
+
+<p>JavaScript 函数按照它们被调用的顺序执行。</p>
+
+<p id="demo"></p>
+    <script>
+       function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+function myFirst() {
+  myDisplayer("Hello");
+}
+
+function mySecond() {
+  myDisplayer("Goodbye");
+}
+
+myFirst();
+mySecond(); 
+// js会按照调用顺序执行而不是定义顺序所以最后的调用会覆盖前面的。
+// 控制代码执行顺序
+function myCalculator(num1, num2) {
+  let sum = num1 + num2;
+  return sum;
+}
+
+let result = myCalculator(5, 5);
+myDisplayer(result);
+    </script>
+</body>
+</html>

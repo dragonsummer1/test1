@@ -19,6 +19,8 @@
         test2();
         // 1.（）可以省略.仅限于一个形参的时候，对象多的话就必须加括号
 // 2.{}省略，只有一句话或者只有返回值带时候可以省略
+// 3.不能支持arguments
+// 4.箭头函数this是父级作用域
 // var test3=(a)=>{
 //     return 100*a;
 // }
@@ -30,6 +32,14 @@ var test4=()=>({
     name:"heima"
 })
 console.log(test4());
+// arguments的用法
+var test5=function(){
+    // console.log(arguments[0],arguments[1],arguments[2])
+    console.log(Array.from(arguments));
+}
+test5(1,2,3);
+// 将伪数组强制转化为数组
+window.document.getElementById("header");
     </script>
 </body>
 </html>

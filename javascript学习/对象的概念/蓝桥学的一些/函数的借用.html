@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数的借用关键字bind
+        const person={
+            firstname:"bill",
+            lastname:"jenny",
+            fullname:function(){
+                return this.firstname+""+this.lastname;
+            }
+        }
+        const memebers={
+            firstname:"steve",
+            lastname:"jobs",
+        }
+        let fullname=person.fullname.bind(memebers);
+        console.log(memebers)
+    </script>
+</body>
+</html>
