@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Promise.resolve(1)
+.then(() => 2)
+.then(3)
+// 不是函数所以会忽略
+.then((value) => value * 3)
+.then(Promise.resolve(4))
+// 对象的话也会被忽略
+.then(console.log)
+    </script>
+</body>
+</html>

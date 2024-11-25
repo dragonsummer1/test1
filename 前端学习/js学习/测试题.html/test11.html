@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for (var i = 0; i < 5; i++) {
+  setTimeout(() => console.log(i), 0)
+}
+
+for (let i = 0; i < 5; i++) {
+  setTimeout(() => console.log(i), 0)
+}
+//let 和全局变量的区别，如果换成var的话先for循环执行完毕后再延迟输出引用之后得值结果答案是5个5
+// 如果是let的话因为是块级作用域直接正常输出
+    </script>
+</body>
+</html>
