@@ -40,6 +40,17 @@ var test5=function(){
 test5(1,2,3);
 // 将伪数组强制转化为数组
 window.document.getElementById("header");
+// 3.对于对象来说用小括号阔上对象的{}
+const fn=(username)=>({name:username})
+fn("刘德华")
+console.log(fn("刘德华"))
+// 4.箭头函数的this是指向上一层作用域的this，指向上一层
+const f1=()=>{
+console.log(this)//这里的this会指向外面的f1()
+}
+// f1()全内容为windows.f1()所以会指向这些
+f1()
+
     </script>
 </body>
 </html>

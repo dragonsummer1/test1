@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const msg={
+            "code":200,
+            "msg":"获取新闻列表成功",
+            "data":[
+                {"id":1,
+                "title":"scscsdv",
+                "count":58
+                }
+            ]
+        }
+        // 要求只要data中的信息而且要阻止名字混淆
+        // const {data}=msg
+        // 最简形式直接在函数形参里面就设定只要data传入后直接筛选data
+        // 后直接打印
+        function render({data:mydata}){
+            console.log(mydata)
+        }
+        render(msg)
+    </script>
+</body>
+</html>

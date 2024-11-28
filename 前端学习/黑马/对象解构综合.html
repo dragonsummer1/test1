@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const pig={
+            name:'佩奇',
+            family:{
+                mother:'猪妈妈',
+                father:'猪爸爸',
+                sister:'乔治'
+            },
+            age:6
+        }
+        // 多层对象的解构
+        const {name,family:{mother,father,sister}}=pig
+        console.log(name)
+        consloe.log(father)
+        consloe.log(sister)
+        console.log(mother)
+    </script>
+    
+</body>
+</html>
