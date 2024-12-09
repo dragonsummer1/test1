@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var map=Array.prototype.map
+        ? function(a,f){//判断map是否存在存在则返回不存在则执行下面的
+            return a.map(f);
+        }:function(a,f){
+            var result=[];
+            for(var i=0,len=a.length;i<len;i++){
+if(i in a) results[i]=f.call(null,a[i],i,a);
+            }
+            return results;
+        };
+    var reduce=Array.prototype.reduce?function(a,f,initial){
+        if(arguments.length>2)
+        return a.reduce(f,initial);
+    else return a.reduce(f);
+    }
+    :function(a,f,initial){
+        var i=0;
+        len=a.length,accumlator;
+        
+    }
+    </script>
+</body>
+</html>

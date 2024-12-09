@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 验证arguments。callee
+        // function getCallee(){
+        //     return arguments.callee;
+        // }
+        // let  callee=getCallee();
+        // console.log(callee===getCallee);
+        // 1.call用于函数2.apply（）传入的是数组、
+        // 将对象中的o中的名为m()的方法替换为另一种方法
+
+        // function trace(o,m){
+        //     var original=0[m];
+        //     // 在闭包中保存原始方法
+        //     // 定义新的方法
+        //     o[m]=function(){
+        //         console.log(new Date(),"Entering;",m);
+        //         var result=original.apply(this,arguments);
+        //         console.log(new Date(),"Exiting",m);
+        //         // 输出日志消息
+        //         return result;
+        //     }
+        // }
+
+
+
+        // bind（）方法:传入一个对象作为参数，方法返回一个新的函数，
+//         function f(y){
+//             return this.x+y;
+//         }
+//         var o={x:1};
+//         // 将要绑定的对象
+//         var g=f.bind(o);
+// // 调用绑定对象，通过调用g(x)来调用o.f(x)
+//         g(2) //x=>3
+//         function bind(f,o){
+//             // 返回一个函数绑定o中的方法f()，传递所有实参
+//             if(f.bind) return f.bind(o);
+//             else return function(){
+//                 return f.apply(o,arguments);
+//             };
+//         }
+
+
+// 科里化
+var sum=function(x,y){
+    return x+y
+};
+var succ=sum.bind(null,1);
+// 赋予x的默认值为1
+succ(2)
+// 绑定到1炳并且传入2作为y的参数会输出3
+function f(y,z){
+    return this.x+y+z
+};
+var g=f.bind({x:1},2);
+// 绑定this。x和y
+console.log(g(3))//6
+
+
+
+// 3.构造函数需要注意的：1.允许运行时动态地创建并编译函数
+// 2.每次执行函数都会解析函数体，创建新的函数对象
+// 3.function()构造，不是使用词法作用域，相反，函数体会在顶层函数执行
+var scope ="global";
+function constructFuction(){
+    var scope="local";
+    return new Function("return scope");
+    // 无法捕获局部作用域
+}
+console.log(constructFuction()());
+
+
+
+
+    </script>
+</body>
+</html>

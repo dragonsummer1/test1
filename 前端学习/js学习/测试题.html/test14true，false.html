@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// var scope="global scope";
+// function checkscope(){
+// var scope="local scpe";
+// function f(){
+//     return scope;
+// }
+// return f();
+
+// }
+
+// console.log(checkscope())
+//   var uniqueInteger=(function(){
+//     var counter=0;
+//     return function(){
+//         return counter++;
+
+//     };
+//   }()) //末尾的（）的意思是创建完成后直接调用函数
+function addprivateproperty(o,name,predicate){
+var value;
+// get 方法简单的返回
+o["get"+name]=function(){
+    return value;
+}
+// set方法
+o["set"+name]=function(v){
+if(predicate&&!predicate(v))
+throw Error("set"+name+":invalid value"+v);
+else
+value=v;
+};
+}
+var o={};
+// 只允许字符串
+addprivateproperty(o,"Name",function(x){return typeof x=="string"})
+o.setName("frank");
+console.log(o.getName());//设置属性值
+o.setName(11215);
+  </script>
+</body>
+</html>

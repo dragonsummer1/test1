@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 不小心把不想共享的变量给了其他闭包
+    function constfunc(v){
+        return function(){return v;};
+    }
+    var funcd=[];
+    for(var i=0;i<10;i++)funcs[i]=constfunc(i);
+funcs[5]()
+//第五个元素的返回值为5
+function constfuncs(){
+var funcs=[]
+for(var i=0;i<10;i++)
+funcs[i]=function(){return i;
+};
+return funcs;
+}
+var funcs=constfuncs();
+console.log(funcs[5])
+    </script>
+</body>
+</html>
