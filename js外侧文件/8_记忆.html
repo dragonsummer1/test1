@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 记忆就是将上次计算结果缓存起来，
+        function memorize(f){
+            var cache={};//闭包
+            return function(){
+             // 将实参转换为字符串形式，并将其用作缓存的键
+             var key=arguments.length+Array.prototype.join(arguments,",")//直接转换为字符串并以，形式分割
+             if(key in cache) return cache[key];
+             else return cache[key]=f.apply(this,arguments);
+            //  否则存入闭包内
+            };
+            // 
+        }
+
+// eg：
+function add(a,b){
+    console.log("caculating.....");
+    return a+b;
+}
+var cachedAdd=memorize(add);
+console.log(cachedAdd(1,2));//输出caculating 。。 后加3
+console.log(cachedAdd(1,2));
+//将值存在闭包里 2 1,2
+// 缓存调用后直接返回3
+// 输出3
+
+
+    </script>
+</body>
+</html>
