@@ -14,12 +14,12 @@
 
 // 立即执行函数表达式是一种常见的匿名函数使用方式，它在定义后会立即执行。
 // 匿名函数可以作为参数传递给其他函数，例如，传递给setTimeout或事件监听器。
-// setTimeout(function(){
-// console.log("这条消息被3s后显示")
-// },3000);
-// document.getElementById("mybutton").addEventListener("click",function(){
-//     console.log("按钮被点击了");
-// });
+setTimeout(function(){
+console.log("这条消息被3s后显示")
+},3000);
+document.getElementById("mybutton").addEventListener("click",function(){
+    console.log("按钮被点击了");
+});
 
 // 匿名函数常用作回调函数，特别是在事件处理和异步
 Array.prototype.forEach.call(document.querySelectorAll(".item"),function(element){

@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     <script>
-        // function not(f){
-        //     return function(){
-        //         var result=f.apply(this,arguments);
-        //         return !result;//对结果取反
-        //     };
-        // }
-        // var even=function(x){
-        //     return x %2===0;
-        // };
-        // var odd=not(even);//函数和even相反
-        // [1,1,3,5,5].every(odd);
+        function not(f){
+            return function(){
+                var result=f.apply(this,arguments);
+                return !result;//对结果取反
+            };
+        }
+        var even=function(x){
+            return x %2===0;
+        };
+        var odd=not(even);//函数和even相反
+        [1,1,3,5,5].every(odd);//对数组进行遍历符合则返回true不然就会返会false
+
         // 上面的not为高阶函数，传入函数同时返回一个新的函数
 // function mapper(f){
 //     return function(a){
@@ -35,21 +35,21 @@
 
 
 // 接受两个函数返回一个新的函数
-function compose(f,g){
-return function(){
-    // 传入一个参数，用call
-    // 传入多个参数用apply
-return f.call(this,g.apply(this,arguments));
-};
-}
-var square=function(x){
-    return x*x;
-}
-var sum=function(x,y){
-    return x+y;
-}
-var squareofsum=compose(square,sum);
-squareofsum(2,5);
+// function compose(f,g){
+// return function(){
+//     // 传入一个参数，用call
+//     // 传入多个参数用apply
+// return f.call(this,g.apply(this,arguments));
+// };
+// }
+// var square=function(x){
+//     return x*x;
+// }
+// var sum=function(x,y){
+//     return x+y;
+// }
+// var squareofsum=compose(square,sum);
+// squareofsum(2,5);
 // 最终结果为25，这里的执行顺序先从括号内执行也就是先执行s+y结果为5在执行乘法因为代码中的this所以我们确定了执行的顺序
 
 
