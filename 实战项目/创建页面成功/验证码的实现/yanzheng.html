@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>验证码示例</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f7f7f7;
+        display: flex;
+        /* 显示展示 布局方式*/
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .v_code {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .code_show {
+        margin-bottom: 20px;
+    }
+    .code {
+        font-size: 20px;
+        background-color: #ddd;
+        font-weight: bold;
+        color: #333;
+        margin-right: 10px;
+    }
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    .input_code {
+        margin-bottom: 20px;
+    }
+    label {
+        font-size: 16px;
+        color: #666;
+    }
+    input[type="text"] {
+        margin-left: 10px;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        width: 150px;
+    }
+    #Button1 {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #Button1:hover {
+        background-color: #0056b3;
+    }
+    #text_show {
+        display: block;
+        margin-top: 10px;
+        color: #d9534f;
+        font-size: 14px;
+    }
+</style>
+</head>
+<body>
+    <div class="v_code">
+        <div class="code_show">
+            <span class="code" id="checkcode">adf34y</span>
+            <a href="linkbt">看不清楚换一张</a>
+        </div>
+        <div class="input_code">
+            <label for="input_code">验证码</label>
+            <input type="text" id="input_code" />
+            <span id="text_show"></span>
+        </div>
+        <input id="Button1" type="button" value="确定">
+    </div>
+    <script>
+        //生成验证码
+        //六位数验证码 0-9 a-f随机生成
+        for(var i=0)
+
+    </script>
+</body>
+</html>

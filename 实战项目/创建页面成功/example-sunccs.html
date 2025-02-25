@@ -18,7 +18,7 @@
 <body>
     <div>
         <h2>恭喜你支付成功</h2>
-        <span id="jumpto">10</span>秒后返回首页
+       <p> <span id="jumpto">10</span>秒后返回首页</p>
         <p><button>
             立即返回
         </button></p>
@@ -26,9 +26,11 @@
     <script>
         // 逻辑：加载页面时候，应该触发定时器10s
         window.onload=function(){
+            //onload为初始化事件
             let timer=10;
             setInterval(()=>{timer--;
                 document.getElementById('jumpto').innerHTML=timer;
+                //计时器函数前面是循环后面为执行的时间间隔
                 if(timer==0){
                     location.href="https://jinwen01.ke.qq.com";
                 }

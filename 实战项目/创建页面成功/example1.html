@@ -17,6 +17,7 @@
         }
         button{
             margin: 30px 25px;
+            color: aqua;
         }
     </style>
 </head>
@@ -34,6 +35,7 @@
     document.getElementsByTagName('button')[1].onclick=function(){
       let res= window.confirm("您确定要支付吗")
       if(res){
+        //confirm为准确的确认是否的框
         location.href='./example-sunccs.html'
       }
 
