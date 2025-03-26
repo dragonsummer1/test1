@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代器</title>
+</head>
+<body>
+    
+    <script>
+//数据只要部署接口就可以进行遍历操作
+//js里的接口 对象里的属性
+//应用:自定义遍历数组
+
+const   lushi={
+    name:'ludashi',
+    stys:["fish","apple","photo","blue"],
+    [Symbol.iterator](){
+        //索引变量
+let index=0;
+return {//next相当于指针
+    next:()=>{
+        if(index<this.stys.length){
+            //输出值的格式
+            const result={value:this.stys[index],done:false}
+       index++;
+       return result
+        }else{
+return {value:undefined,done:true}
+        }
+    }
+
+    }
+}
+    }
+    //相当于写了一个接口
+    for(let v of lushi){
+        console.log(v)
+    }
+
+
+
+
+    </script>
+</body> 
+</html>
