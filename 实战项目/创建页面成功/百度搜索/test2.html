@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 省略样式部分 -->
+</head>
+<body>
+    <!-- 内容区域和搜索框等 HTML 结构保持不变 -->
+    <div class="content">
+        <div class="search">
+            <!-- 输入框 -->
+            <input type="text" id="val" placeholder="请输入课程">
+            <!-- 提交按钮 -->
+            <input type="submit" id="sub" value="搜索">
+        </div>
+        <!-- 显示区域 -->
+        <div class="show" id="show"></div>
+    </div>
+    <script>
+        const arr = ['zhao','sccdcsc','knjn','hbhb','bhbhb','小春'];
+        let input = document.getElementById("val");
+        let show = document.getElementById("show");
+
+        input.onkeyup = function () {
+            // 每次输入时，显示区域可见
+            show.style.display = 'block';
+            const searchTerm = this.value; // 获取当前的输入值
+            let str = '';
+            arr.forEach((item) => {
+                const index = item.indexOf(searchTerm);
+                if (index !== -1) { // 如果找到匹配项
+                    str += `<p>${item}</p>`;
+                }
+            });
+            // 检查是否有输入值或匹配项
+            if (searchTerm || str) {
+                show.innerHTML = str; // 显示所有匹配项
+                if (!str) {
+                    show.innerHTML = '<p>暂无结果</p>';
+                }
+            } else {
+                show.style.display = 'none'; // 没有输入时隐藏显示区域
+            }
+        }
+
+        input.onblur = function () {
+            // 移出焦点时，恢复初始状态
+            show.style.display = 'none';
+            this.value = '';
+        }
+    </script>
+</body>
+</html>

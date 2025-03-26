@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: #58a;
+    }
+</style>
+</head>
+<body>
+    <div id="ad"></div>
+    <script>
+        // let fn=(a,b)=>{
+
+        //     return a+b;
+        // }
+        // let result=fn(1,2)
+        //声明以及调用箭头函数
+        //箭头函数this是静态的this始终指向函数声明所在的作用域下
+        // function getname(){
+        //     console.log(this.name);
+
+        // }
+        // let getname2=()=>{
+
+        //     console.log(this.name);
+        // }
+        // window.name="尚硅谷";
+        // const school={
+        //     name:"ATRI"
+        // }
+        //使用call方法进行调用
+        // getname.call(school)
+        //输出结果为atri
+        // getname2.call(school)
+        //输出结果为尚硅谷
+        //3.不能使用实例化对象的方法
+        //4.不支持使用argument
+//应用场景
+//需求点击div 2s后进行变色
+//获取元素
+let ad=document.getElementById('ad');
+
+// ad.addEventListener("click",function(){
+
+// //计时器
+// //不能直接使用this因为他不会直接跳出去寻找本身
+// // let _this=this;
+// // setTimeout(function(){_this.style.background="pink"
+
+// // },2000);
+//正常写法
+// // })
+//匿名函数写法
+ad.addEventListener("click",function(){
+
+    setTimeout(() => {
+        this.style.background="pink"
+    }, 2000);
+})
+
+
+///数组中返回偶元素
+let arr=[2,4,9,8,45,12,45,16]
+//filter会直接拷贝数组然后后面的函数对代码进行一定操作
+// const result =arr.filter(function(item){
+//     if(item%2===0){
+//         return true;
+//     }else{
+//         return false
+//     }
+// })
+
+
+//匿名函数
+const result=arr.filter(item=>item%2===0);
+console.log(result)
+//适合与this无关的回调，不适合dom回调
+
+    </script>
+</body>
+</html>

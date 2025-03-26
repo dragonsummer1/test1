@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var money =100;
+            while(true){
+                var action =prompt("请输入你要的操作：\n 1.存钱 \n 2.取钱 \n 3.显示余额 \n 4.退出");
+                switch (parseInt(action)){
+                    case 1:
+                        var money1 = prompt('请输入存入金额');
+                        money = money+ parseInt(money1)
+                        alert('你的余额为' + money + '元');
+                        break;
+                    case 2:
+                        var money2 =prompt('请输入取出金额');
+                        if(money < money2){
+                            alert('你的余额不足');
+                        }else{
+                            money = money - parseInt(money2);
+                            alert('你已取出，你的余额为' + money + '元');
+                        }
+                        break;
+                    case 3:
+                        alert("你的余额为" + money + '元');
+                        break;
+                    case 4:
+                        alert("你已经退出");
+                        break;
+                    default:
+                        alert("你输入的不正确");
+                        break;
+                    }
+                if(action==4){
+                    break;
+                }   //  这主要想让用户选择4时跳出循环
+            }  
+        
+    </script>
+</body>
+</html>

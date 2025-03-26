@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+//es6引入rest参数调用用于获取函数的实参，用来代替arguments
+//es5实参获取方式
+function log(){
+    console.log(arguments)
+}
+log("小jiji","ajiao","nima");
+//es6，rest实参
+function date(...args){
+console.log(args)
+}
+date("xiaojiji","love","atri")
+//以数组的形式进行了封装
+
+    </script>
+</body>
+</html>
