@@ -10,6 +10,51 @@
 //1.值唯一的
 //2.symbol值不能与其他数据进行运算
 //3.定义对象属性不能用for。。。in。。遍历循环，但是可以使用reflect.ownkeys来获取对象的所有键名
+let s=Symbol('我爱你')
+//一般用于对键进行解释之间的关系
+//传入字符串用于symbol字符串的注释 
+// console.log(s,typeof s) 
+let s1=Symbol()
+ let s2=Symbol()
+ console.log(s1===s2)
+ let s4=Symbol.for('jenny')
+ let s5=Symbol.for('jenny')
+ console.log(s4===s5)
+ //返回true
+ //usonb you are so niu
+ //
+
+
+
+ //symbol的使用:独一无二的值给对象添加属性和方法
+ let game={
+    up:"a",
+    down:"b",
+    name:'俄罗斯方块'
+ }
+ //例子  声明对象
+//  let method={
+//     up:Symbol(),
+// down:Symbol()
+//  }
+//  game[method.up]=function(){
+//     conmsole.log("我可以快速上升")
+//  }
+//  game[method.down]=function(){
+//     console.log("我可以快速香")
+//  }
+//  //无论game里面是否有该方法都会加进去，如果有的话会为对象再加上该方法
+let youxi={
+    name:'狼人杀',
+    [Symbol('say')]:function(){
+        //动态对象用【】:symbol需要用中括号括起来
+        console.log("我可以自保")
+    },
+    [Symbol("ask")]:function(){
+console.log("what can i say")
+    }
+}
+console.log(youxi)
 
     </script>
 </body>
