@@ -7,7 +7,23 @@
 </head>
 <body>
     <script>
+<<<<<<< HEAD
         
+=======
+
+        const p=new Promise(function(reslove,reject){
+//resolve为成功方法。reject一般定义失败后方法
+setTimeout(() => {
+    let value="数据加载成功"
+    reslove(value)
+    //使用的为resolve那么下面的then会调用第一个函数
+    let connect="数据加载失败"
+    reject(connect)
+}, );
+        })
+//调用promise对象的then方法
+p.then(function(value){console.log(value)},function(reason){console.log(reason)})
+>>>>>>> 2e58dd29557e4e52d50456a5d6d43f13728a1e38
     </script>
 </body>
 </html>

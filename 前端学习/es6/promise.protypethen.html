@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const p=new Promise((resolve,reject)=>{
+
+    setTimeout(() => {
+        resolve('用户数据')
+        reject("出错了")
+        //正确输入
+    }, 2000);
+})
+//调用then方法 then方法返回的结果为promise，对象状态由回调函数的执行结果决定
+//1.如果回调函数中返回结果是 非promise类型的属性，状态成功，返回为对象的成功的值
+const result=p.then(value=>{
+    console.log(value)
+    return 'i love you';
+},reason=>{
+    console.warn(reason)
+}
+);
+console.log(result)
+
+
+//链式调用
+p.then(value=>{
+
+}).then(value=>{})
+// console.log(result)
+
+
+ 
+
+    </script>
+</body>
+</html>
