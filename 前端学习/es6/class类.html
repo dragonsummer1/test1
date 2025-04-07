@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //例子2
+        // function Phone(){}
+        // //会出现错误实例化对象属性和函数对象不相同
+        // //也就是说下面那两个声明的为实例化对象我们管这个叫做静态成员
+
+        // Phone.name="手机";
+        // Phone.change=function(){
+        //     console.log("我可樱花遍世界为")
+        // }
+        // Phone.prototype.size='5inh'
+        // let test=new Phone()
+        // console.log(test.size)
+        // //打印实例化对象只会输出实例化对象
+
+        class Phone{
+            static name="试漏机"
+            static change(){
+                console.log("我可以改变你")
+            }
+        }
+        //实力的对象并不能实现对静态方法的的调用
+        let unku=new Phone()
+        console.log(unku.name)
+        console.log(Phone.name)
+
+    </script>
+</body>
+</html>
